@@ -3,7 +3,7 @@
 ```c++
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include "background.h"
+#include "nativejava/background.h"
 
 void doTask() {
     qDebug() << "[Background] Executing background ritual.";
