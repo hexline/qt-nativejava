@@ -1,5 +1,5 @@
 # qt-nativejava
-## A high-level wrapper for use in Qt/C++ that can interact with Native Android. This library includes reliable headers that would save time. 
+### A high-level wrapper for use in Qt/C++ that can interact with Native Android. This library includes reliable headers that would save time. 
 ## Supported native processes:
 1. Interacting with app's Activity.
 2. Permission handling: Requesting and checking runtime permissions.
