@@ -3,8 +3,10 @@
 ```c++
 #include <nativejava/popup.h>
 
-void notifyUser() {
-    NativeJava::Popup::showToast("This is a native toast!");
-    NativeJava::Popup::showToast("Long one...", NativeJava::Popup::Duration::Long);
+void popupSomething() {
+    NativeJava::Popup::showToast("Hello from Qt!");
+    NativeJava::Popup::showSnackbar("Here's a Snackbar!", NativeJava::Popup::Duration::Long);
+    NativeJava::Popup::showAlertDialog("Greetings", "This is an AlertDialog.");
 }
+
 ```
