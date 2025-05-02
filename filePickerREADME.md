@@ -1,5 +1,6 @@
 ## Example usage:
 ```c++
+#include <QDebug>
 #include "FilePicker.h"
 
 NativeJava::FilePicker::onFilePicked([](const QString& filePath) {
