@@ -25,10 +25,10 @@ int main(int argc, char *argv[])
 ```
 
 #### Don't forget to update the android AndroidManifest.xml in <project_root>/android/AndroidManifest.xml
-  <b>Inside &ltapplication&gt tag</b>
+  <b>Inside <application> tag</b>
   ```xml
   <service
-    android:name="org.qtproject.bridge.BackgroundService"
+    android:name="com.nativejava.BackgroundService"
     android:enabled="true"
     android:exported="true"
     android:foregroundServiceType="dataSync"
