@@ -1,4 +1,4 @@
-##Usage
+## Usage
 <b>In your Qt app,</b>
 ```c++
 #include <QGuiApplication>
@@ -25,7 +25,6 @@ int main(int argc, char *argv[])
 ```
 
 #### Don't forget to update the android AndroidManifest.xml in <project_root>/android/AndroidManifest.xml
-<p>
   <b>Inside &ltapplication&gt tag</b>
   ```xml
   <service
@@ -36,4 +35,3 @@ int main(int argc, char *argv[])
     android:permission="android.permission.BIND_JOB_SERVICE" />
 
   ```
-</p>
