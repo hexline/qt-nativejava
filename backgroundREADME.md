@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 ```
 
 #### Don't forget to update the android AndroidManifest.xml in <project_root>/android/AndroidManifest.xml
-  <b>Inside <application> tag</b>
+  <b>Inside &lt;application&gt; tag</b>
   ```xml
   <service
     android:name="com.nativejava.BackgroundService"
