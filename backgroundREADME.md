@@ -33,5 +33,16 @@ int main(int argc, char *argv[])
     android:exported="true"
     android:foregroundServiceType="dataSync"
     android:permission="android.permission.BIND_JOB_SERVICE" />
+// If you want to start it after boot,
+<receiver
+    android:enabled="true"
+    android:exported="true"
+    android:permission="android.permission.RECEIVE_BOOT_COMPLETED"
+    android:name="com.nativejava.BootReceiver">
+    <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+    </intent-filter>
+</receiver>
 
   ```
+
