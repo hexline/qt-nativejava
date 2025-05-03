@@ -30,9 +30,10 @@ void postNotification() {
 For reading notifications, add this to your manifest file, then remind the user to enable Notification access for your app, (API 18+)
 ```xml
 <service
-    android:name=".NotificationReaderService"
+    android:name="com.nativejava.NotificationReaderService"
     android:label="Notification Reader"
-    android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+    android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+    android:exported="true"> <!-- must be exported to allow system binding -->
     <intent-filter>
         <action android:name="android.service.notification.NotificationListenerService" />
     </intent-filter>
