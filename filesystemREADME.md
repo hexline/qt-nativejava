@@ -14,6 +14,15 @@ NativeJava::filesystem::write(
     }
 );
 
+// Check if a file exists
+NativeJava::filesystem::exists("/sdcard/test.txt", [](const QString& msg, bool error) {
+    if (!error)
+        qDebug() << "Exists:" << msg;
+    else
+        qDebug() << "Missing:" << msg;
+});
+
+
 // Read a file
 NativeJava::filesystem::read(
     "/sdcard/MyApp/data.txt",
