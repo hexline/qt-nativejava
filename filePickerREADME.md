@@ -2,6 +2,7 @@
 ```c++
 // No permission required for File Picker to read files
 #include <QDebug>
+#include <QFile>
 #include <nativejava/filePicker.h>
 
 void pickFileAndRead() {
