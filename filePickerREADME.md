@@ -1,13 +1,23 @@
 ## Example usage:
 ```c++
 #include <QDebug>
-#include "nativejava/filePicker.h"
+#include <nativejava/filePicker.h>
 
-NativeJava::FilePicker::onFilePicked([](const QString& filePath) {
-    qDebug() << "File selected:" << filePath;
-    // Process it here
-});
+void pickFileAndRead() {
+    NativeJava::FilePicker::onFilePicked([](const QString& path) {
+        qDebug() << "File picked:" << path;
 
-NativeJava::FilePicker::open("image/*");
+        QFile file(path);
+        if (file.open(QIODevice::ReadOnly)) {
+            QByteArray data = file.readAll();
+            qDebug() << "File content:" << data.left(100); // Preview first 100 bytes
+            file.close();
+        } else {
+            qWarning() << "Failed to open file:" << path;
+        }
+    });
 
+    // Launch file picker for any file
+    NativeJava::FilePicker::open("*/*");
+}
 ```
