@@ -1,5 +1,6 @@
 ## Example usage:
 ```c++
+// No permission required for File Picker to read files
 #include <QDebug>
 #include <nativejava/filePicker.h>
 
