@@ -26,6 +26,16 @@ qt_add_executable(appMyApplication
 add_subdirectory(nativejava/)
 set_property(TARGET appMyApplication APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_SOURCE_DIR}/android)
 ```
+The last thing to do id to open <b>nativejava/CMakeLists.txt</b> and change your target source to match the target of the previous CMakeLists.txt, for example
+
+```cmake
+target_sources(appMyApplication
+    PRIVATE
+        background.h bluetooth.h camera. filePicker.h interface.h hardware.h hotspot.h launchActivity.h permission.h popup.h microphone.h notification.h specialPermission.h wifi.h
+)
+```
+
+
 ## Supported native processes:
 1. Interacting with app's Activity.
 2. Permission handling: Requesting and checking runtime permissions.
