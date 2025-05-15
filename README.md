@@ -1,7 +1,7 @@
 # qt-nativejava
 #### A high-level wrapper for use in Qt/C++ that can interact with Native Android. This library includes reliable headers that would save time. 
 
-#### How to install
+## How to install
 Clone or download this repo into your project root folder
 ```bash
 git clone https://github.com/hexline/qt-nativejava
@@ -18,7 +18,7 @@ my_project
 --  Main.qml
 --  CMakeLists.txt
 ```
-Then open your CMakeLists.txt and add this after <b>qt_add_executable</b> like this:
+Then open your CMakeLists.txt and add this after <b>qt_add_executable()</b>, for example:
 ```cmake
 qt_add_executable(appMyApplication
     main.cpp
