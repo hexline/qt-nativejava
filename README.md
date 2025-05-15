@@ -5,7 +5,7 @@
 Clone or download this repo into your project root folder
 ```bash
 git clone https://github.com/hexline/qt-nativejava
-mv qt-nativejava nativejava
+mv qt-nativejava nativejava #Rename the folder
 ```
 The folder would look like:
 my_project
