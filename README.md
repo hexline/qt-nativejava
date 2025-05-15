@@ -2,7 +2,11 @@
 #### A high-level wrapper for use in Qt/C++ that can interact with Native Android. This library includes reliable headers that would save time. 
 
 ## How to install
-Clone or download this repo into your project root folder
+* For Windows, download <a href="">THIS FILE</a> into your Qt Project's folder, where main.cpp is found.
+* For Linux, download <a href="">THIS FILE</a> into your Qt Project's folder, where main.cpp is found.
+Then run the downloaded file.
+#### Installation is done!
+
 ```bash
 git clone https://github.com/hexline/qt-nativejava
 mv qt-nativejava nativejava # Rename the folder
@@ -46,11 +50,9 @@ class MyHandler: public QObject{
     Q_OBJECT
 public:
     Q_INVOKABLE void pickFile(QString permString){
-        NativeJava::filePicker::onFilePicked([](const QString &path) {
-            qDebug() << "[FilePicker] File picked:" << path;
-            //QCoreApplication::quit();  // Exit after picking
-        });
-        NativeJava::filePicker::open("image/*");
+        NativeJava::FilePicker::open([](const QString &path){
+            qDebug() << "Got file path:" << path;
+        }, "image/*");
     }
 }
 ```
