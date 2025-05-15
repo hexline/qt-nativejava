@@ -1,5 +1,24 @@
 # qt-nativejava
-### A high-level wrapper for use in Qt/C++ that can interact with Native Android. This library includes reliable headers that would save time. 
+#### A high-level wrapper for use in Qt/C++ that can interact with Native Android. This library includes reliable headers that would save time. 
+
+#### How to install
+Clone or download this repo into your project root folder
+```bash
+git clone https://github.com/hexline/qt-nativejava
+mv qt-nativejava nativejava
+```
+The folder would look like:
+my_project
+->  nativejava/
+->  main.cpp
+->  Main.qml
+->  CMakeLists.txt
+
+Then open your CMakeLists.txt and add this after <b>qt_add_executable</b>
+```cmake
+add_subdirectory(nativejava/)
+set_property(TARGET LurkerX APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_SOURCE_DIR}/android)
+```
 ## Supported native processes:
 1. Interacting with app's Activity.
 2. Permission handling: Requesting and checking runtime permissions.
