@@ -34,14 +34,33 @@ target_sources(appMyApplication
         background.h bluetooth.h camera. filePicker.h interface.h hardware.h hotspot.h launchActivity.h permission.h popup.h microphone.h notification.h specialPermission.h wifi.h
 )
 ```
+#### Installation is done! 
 
+Example of how to use:
+```c++
+// MyHandler.h
+#include <QObject>
+#include <nativejava/filePicker.h>
+
+class MyHandler: public QObject{
+    Q_OBJECT
+public:
+    Q_INVOKABLE void pickFile(QString permString){
+        NativeJava::filePicker::onFilePicked([](const QString &path) {
+            qDebug() << "[FilePicker] File picked:" << path;
+            //QCoreApplication::quit();  // Exit after picking
+        });
+        NativeJava::filePicker::open("image/*");
+    }
+}
+```
 
 ## Supported native processes:
-1. Interacting with app's Activity.
-2. Permission handling: Requesting and checking runtime permissions.
-3. Special Permission handling: Handles requesting special permissions like 'All files access', saving you time.
-4. Local Stream: A header that lays clear path for native file handling, voice capturing and processing, camera usage, etc.
-5. Hardware and Sensors: This library includes a header that provides useful methods for common tasks regarding sensors, telephony, etc.
-6. Notifications reading and writing.
-7. Android content provider: Useful wrappers for reading and writing of Contacts, SMS, and Call Logs.
-8. 
+
+ **Permission handling**: Requesting and checking runtime permissions.
+ **Special Permission handling**: Handles requesting special permissions like 'All files access', saving you time.
+ **Local Stream**: A header that lays clear path for native file handling, voice capturing and processing, camera usage, etc.
+ **Notifications** reading and writing.
+ **Hardware and Sensors**: This library includes a header that provides useful methods for common tasks regarding sensors, telephony, etc.
+ **Android content provider**: Useful wrappers for reading and writing of Contacts, SMS, and Call Logs.
+ <a href="">How to use (example)</a>
