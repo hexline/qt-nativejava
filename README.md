@@ -5,7 +5,9 @@
 Clone or download this repo into your project root folder
 ```bash
 git clone https://github.com/hexline/qt-nativejava
-mv qt-nativejava nativejava #Rename the folder
+mv qt-nativejava nativejava # Rename the folder
+# Move android/ folder to the root folder
+mv nativejava/android android
 ```
 The folder would look like:
 my_project
@@ -14,10 +16,13 @@ my_project
 ->  Main.qml
 ->  CMakeLists.txt
 
-Then open your CMakeLists.txt and add this after <b>qt_add_executable</b>
+Then open your CMakeLists.txt and add this after <b>qt_add_executable</b> like this:
 ```cmake
+qt_add_executable(appMyApplication
+    main.cpp
+)
 add_subdirectory(nativejava/)
-set_property(TARGET LurkerX APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_SOURCE_DIR}/android)
+set_property(TARGET appMyApplication APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_SOURCE_DIR}/android)
 ```
 ## Supported native processes:
 1. Interacting with app's Activity.
