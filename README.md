@@ -58,12 +58,12 @@ public:
 ## Supported native processes:
 
  * **Permission handling**: Requesting and checking runtime permissions.
-   <a href="">How to request permission (example)</a>
+   <a href="permissionREADME.md">How to request permission (example)</a>
  * **Special Permission handling**: Handles requesting special permissions like 'All files access', saving you time.
-   <a href="">How to request permission (example)</a>
+   <a href="specialPermissionREADME.md">How to request permission (example)</a>
  * **Notifications** reading and writing.
-   <a href="">How to post or read all notifications (example)</a>
+   <a href="notificationsREADME.md">How to post or read all notifications (example)</a>
  * **Hardware and Sensors**: This library includes a header that provides useful methods for common tasks regarding sensors, telephony, camera usage, live location access, biometrics etc.
-   <a href="">How to use (example)</a>
+   <a href="hardwareREADME.md">How to use (example)</a>
  * **Android content provider**: Useful wrappers for reading and writing of Contacts, SMS, and Call Logs.
- <a href="">How to use (example)</a>
+ <a href="contentProviderREADME.md">How to use (example)</a>
