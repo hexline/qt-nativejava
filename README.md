@@ -58,9 +58,12 @@ public:
 ## Supported native processes:
 
  * **Permission handling**: Requesting and checking runtime permissions.
-    **Special Permission handling**: Handles requesting special permissions like 'All files access', saving you time.
- * **Local Stream**: A header that lays clear path for native file handling, voice capturing and processing, camera usage, etc.
+   <a href="">How to request permission (example)</a>
+ * **Special Permission handling**: Handles requesting special permissions like 'All files access', saving you time.
+   <a href="">How to request permission (example)</a>
  * **Notifications** reading and writing.
- * **Hardware and Sensors**: This library includes a header that provides useful methods for common tasks regarding sensors, telephony, etc.
+   <a href="">How to post or read all notifications (example)</a>
+ * **Hardware and Sensors**: This library includes a header that provides useful methods for common tasks regarding sensors, telephony, camera usage, live location access, biometrics etc.
+   <a href="">How to use (example)</a>
  * **Android content provider**: Useful wrappers for reading and writing of Contacts, SMS, and Call Logs.
  <a href="">How to use (example)</a>
