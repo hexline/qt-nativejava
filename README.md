@@ -10,13 +10,14 @@ mv qt-nativejava nativejava # Rename the folder
 mv nativejava/android android
 ```
 The folder would look like:
+```
 my_project
 --  nativejava/
 --  android/
 --  main.cpp
 --  Main.qml
 --  CMakeLists.txt
-
+```
 Then open your CMakeLists.txt and add this after <b>qt_add_executable</b> like this:
 ```cmake
 qt_add_executable(appMyApplication
