@@ -49,7 +49,7 @@ Example of how to use:
 class MyHandler: public QObject{
     Q_OBJECT
 public:
-    Q_INVOKABLE void pickFile(QString permString){
+    Q_INVOKABLE void pickFile(){
         NativeJava::FilePicker::open([](const QString &path){
             qDebug() << "Got file path:" << path;
         }, "image/*");
