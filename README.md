@@ -40,56 +40,39 @@ target_sources(appMyApplication
 ```
 #### Installation is done! 
 
-Example of how to use:
-```c++
-// MyHandler.h
-#include <QObject>
-#include <nativejava/filePicker.h>
-
-class MyHandler: public QObject{
-    Q_OBJECT
-public:
-    Q_INVOKABLE void pickFile(){
-        NativeJava::FilePicker::open([](const QString &path){
-            qDebug() << "Got file path:" << path;
-        }, "image/*");
-    }
-}
-```
-
-## Supported native processes:
+## How to Use:
 
  * **Permission handling**: Requesting and checking runtime permissions.
-   ```c++
-#include <nativejava/permission.h>
+```c++
+    #include <nativejava/permission.h>
 
-   ```
+```
    <a href="permissionREADME.md">Full guide on How to check and request permissions</a>
  * **Special Permission handling**: Handles requesting special permissions like 'All files access', saving you time.
-   ```c++
-//Example
-#include <nativejava/specialPermission.h>
-if (!NativeJava::SpecialPermission::allFilesAccess::granted()) {
-    NativeJava::SpecialPermission::allFilesAccess::open();
-}
+```c++
+    //Example
+    #include <nativejava/specialPermission.h>
+    if (!NativeJava::SpecialPermission::allFilesAccess::granted()) {
+        NativeJava::SpecialPermission::allFilesAccess::open();
+    }
    ```
    <a href="specialPermissionREADME.md">Full guide on How to check and request other special permissions</a>
  * **Notifications** reading and writing.
-   ```c++
-//Example
-#include <nativejava/notification.h>
-void postNotification() {
-    NativeJava::notification::write("Greetings", "You've just summoned a toast of chaos!", 101);
-}
-   ```
+```c++
+    //Example
+    #include <nativejava/notification.h>
+    void postNotification() {
+        NativeJava::notification::write("Greetings", "You've just summoned a toast of chaos!", 101);
+    }
+```
    <a href="notificationREADME.md"> FUll guide on How to post or read all notifications (example)</a>
  * **Android content provider**: Useful wrappers for reading and writing of Contacts, SMS, and Call Logs.
-   ```c++
+```c++
    //Example
    #include <nativejava/content.h>
    NativeJava::content::Content::onContactsReceived([](const QString& json) {
         qDebug() << "[Contacts JSON] => " << json;
     });
    NativeJava::content::Content::fetchContacts();
-   ```
+```
  <a href="contentProviderREADME.md">Full guide on How to use read and write contacts, sms, call logs</a>
