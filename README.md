@@ -60,13 +60,33 @@ public:
 ## Supported native processes:
 
  * **Permission handling**: Requesting and checking runtime permissions.
-   <a href="permissionREADME.md">Full guide on How to request permission (example)</a>
+   ```c++
+#include <nativejava/permission.h>
+
+   ```
+   <a href="permissionREADME.md">Full guide on How to check and request permissions</a>
  * **Special Permission handling**: Handles requesting special permissions like 'All files access', saving you time.
-   <a href="specialPermissionREADME.md">Full guide on How to request permission (example)</a>
+   ```c++
+//Example
+#include <nativejava/specialPermission.h>
+if (!NativeJava::SpecialPermission::allFilesAccess::granted()) {
+    NativeJava::SpecialPermission::allFilesAccess::open();
+}
+   ```
+   <a href="specialPermissionREADME.md">Full guide on How to check and request other special permissions</a>
  * **Notifications** reading and writing.
-   <a href="notificationsREADME.md"> FUll guide on How to post or read all notifications (example)</a>
+   ```c++
+//Example
+#include <nativejava/notification.h>
+void postNotification() {
+    NativeJava::notification::write("Greetings", "You've just summoned a toast of chaos!", 101);
+}
+   ```
+   <a href="notificationREADME.md"> FUll guide on How to post or read all notifications (example)</a>
  * **Android content provider**: Useful wrappers for reading and writing of Contacts, SMS, and Call Logs.
    ```c++
+   //Example
+   #include <nativejava/content.h>
    NativeJava::content::Content::onContactsReceived([](const QString& json) {
         qDebug() << "[Contacts JSON] => " << json;
     });
