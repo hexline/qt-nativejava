@@ -1,4 +1,4 @@
-## Usage of checking and requesting Special Access and Special Permissions
+ ## Usage of checking and requesting Special Access and Special Permissions
 
 ```c++
 // On Android 8.0+, you need this permission to install unknown apps
@@ -10,6 +10,10 @@ if (!NativeJava::SpecialPermission::installUnknownApps::granted()) {
 if (!NativeJava::SpecialPermission::changeSystemSettings::granted()) {
     NativeJava::SpecialPermission::changeSystemSettings::open();
 }
+```
+# Add this to your manifest file permissions to make system modification permission valid:
+```xml
+<uses-permission android:name="android.permission.WRITE_SETTINGS" android:minSdkVersion="23"/>
 ```
 
 ```c++
