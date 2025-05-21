@@ -7,39 +7,6 @@
 Then run the downloaded file.
 #### Installation is done!
 
-```bash
-git clone https://github.com/hexline/qt-nativejava
-mv qt-nativejava nativejava # Rename the folder
-# Move android/ folder to the root folder
-mv nativejava/android android
-```
-The folder would look like:
-```
-my_project
---  nativejava/
---  android/
---  main.cpp
---  Main.qml
---  CMakeLists.txt
-```
-Then open your CMakeLists.txt and add this after <b>qt_add_executable()</b>, for example:
-```cmake
-qt_add_executable(appMyApplication
-    main.cpp
-)
-add_subdirectory(nativejava/)
-set_property(TARGET appMyApplication APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_SOURCE_DIR}/android)
-```
-The last thing to do id to open <b>nativejava/CMakeLists.txt</b> and change your target source to match the target of the previous CMakeLists.txt, for example
-
-```cmake
-target_sources(appMyApplication
-    PRIVATE
-        background.h bluetooth.h camera. filePicker.h interface.h hardware.h hotspot.h launchActivity.h permission.h popup.h microphone.h notification.h specialPermission.h wifi.h
-)
-```
-#### Installation is done! 
-
 ## How to Use:
 
  * **Permission handling**: Requesting and checking runtime permissions.
