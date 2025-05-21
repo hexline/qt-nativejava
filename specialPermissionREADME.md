@@ -18,11 +18,12 @@ if (!NativeJava::SpecialPermission::allFilesAccess::granted()) {
     NativeJava::SpecialPermission::allFilesAccess::open();
 }
 ```
-Also, you should add this permission to your manifest file in order for all files access to work:
+####Also, you should add this permission to your manifest file in order for all files access to work:
 ```xml
 <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" android:minSdkVersion="30"/>
 ```
 
+#### Usage data access and device admin request
 ```c++
 if (!NativeJava::SpecialPermission::usageDataAccess::granted()) {
     NativeJava::SpecialPermission::usageDataAccess::open();
