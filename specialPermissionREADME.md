@@ -6,15 +6,24 @@ if (!NativeJava::SpecialPermission::installUnknownApps::granted()) {
     NativeJava::SpecialPermission::installUnknownApps::open();
 }
 
+// Permission to modify system settings
 if (!NativeJava::SpecialPermission::changeSystemSettings::granted()) {
     NativeJava::SpecialPermission::changeSystemSettings::open();
 }
+```
 
-// On Android 11+, you must gain all files acces to use the feature,
+```c++
+// On Android 11+, you all files access is introduced,
 if (!NativeJava::SpecialPermission::allFilesAccess::granted()) {
     NativeJava::SpecialPermission::allFilesAccess::open();
 }
+```
+Also, you should add this permission to your manifest file in order for all files access to work:
+```xml
+<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" android:minSdkVersion="30"/>
+```
 
+```c++
 if (!NativeJava::SpecialPermission::usageDataAccess::granted()) {
     NativeJava::SpecialPermission::usageDataAccess::open();
 }
