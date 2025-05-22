@@ -24,7 +24,9 @@
 
 *You can register the service when a button is clicked, like:*
 ```c++
+#include <nativejava/background.h>
 
+NativeJava::background::internetService::registerReceiver();
 ```
 
 2. ### Calling a function when 
