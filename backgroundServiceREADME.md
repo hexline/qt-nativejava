@@ -21,15 +21,14 @@
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 *Then start the service:*
-```h
-NativeJava::background::internetService::startService();
-```
-
-*You can register the service when a button is clicked, like:*
 ```c++
-#include <nativejava/background.h>
-
-NativeJava::background::internetService::registerReceiver();
+// Call this to start the service
+NativeJava::background::internetService::startService(
+         [](bool up){
+              if (up)  qDebug() << "Internet is back!";
+              else     qDebug() << "Internet went away.";
+          }
+);
 ```
 
 2. ### Calling a function when 
