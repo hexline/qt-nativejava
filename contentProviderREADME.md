@@ -7,6 +7,8 @@ Make sure the respective permissions are present in the manifest file:
 <uses-permission android:name="android.permission.READ_CALL_LOG"/>
 <uses-permission android:name="android.permission.READ_CONTACTS"/>
 <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+<uses-permission android:name="android.permission.SEND_SMS"/>
+<uses-permission android:name="android.permission.CALL_PHONE"/>
 ```
 
 ```cpp
