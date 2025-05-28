@@ -24,3 +24,12 @@ void fetchContacts() {
     });
 }
 ```
+
+#### Send SMS, Dial, Write call logs
+```cpp
+#include <nativejava/contentWriter.h>
+
+bool sent = NativeJava::contentProvider::writer::sendSms("+1234567890", "Chaos is texting you...");
+bool dialed = NativeJava::contentProvider::writer::dial("+1234567890");
+bool logged = NativeJava::contentProvider::writer::writeCallLog("+1234567890", "2", QDateTime::currentSecsSinceEpoch());
+```
