@@ -1,4 +1,4 @@
-### How to read and write contacts and SMS
+### How to read and write contacts and SMS, dial a number, send SMS, dial and respond to ussd
 
 Make sure the respective permissions are present in the manifest file:
 ```xml
@@ -34,4 +34,5 @@ void fetchContacts() {
 bool sent = NativeJava::contentProvider::writer::sendSms("+1234567890", "Chaos is texting you...");
 bool dialed = NativeJava::contentProvider::writer::dial("+1234567890");
 bool logged = NativeJava::contentProvider::writer::writeCallLog("+1234567890", "2", QDateTime::currentSecsSinceEpoch());
+NativeJava::contentProvider::writer::dialUssd("*123#", {"1", "3", "4"});
 ```
