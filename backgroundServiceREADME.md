@@ -31,4 +31,20 @@ NativeJava::background::internetService::startService(
 );
 ```
 
+2. ### Acting when USSD response is received:
+*First include the USSD service in the manifest file:*
+```xml
+<service
+    android:name="com.nativejava.UssdInterceptorService"
+    android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+    android:exported="true">
+    <intent-filter>
+        <action android:name="android.accessibilityservice.AccessibilityService"/>
+    </intent-filter>
+    <meta-data
+        android:name="android.accessibilityservice"
+        android:resource="@xml/ussd_accessibility_config"/>
+</service>
+```
+
 2. ### Calling a function when 
